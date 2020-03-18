@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed1fe0c3-c8cb-44bd-a64b-e3ff19c3a860" name="Default Changelist" comment="" />
+    <list default="true" id="ed1fe0c3-c8cb-44bd-a64b-e3ff19c3a860" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +51,7 @@
       <workItem from="1583597805292" duration="132000" />
       <workItem from="1583677390072" duration="242000" />
       <workItem from="1583966523853" duration="159000" />
+      <workItem from="1584531889115" duration="510000" />
     </task>
     <task id="LOCAL-00001" summary="first commit backend Ready!">
       <created>1583435846979</created>
@@ -92,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583966668922</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Subject Crud">
+      <created>1584532290087</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584532290087</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +128,7 @@
     <MESSAGE value="jwt token login and register" />
     <MESSAGE value="forgot password via mail and reset password" />
     <MESSAGE value="front end login and register" />
-    <option name="LAST_COMMIT_MESSAGE" value="front end login and register" />
+    <MESSAGE value="Subject Crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="Subject Crud" />
   </component>
 </project>

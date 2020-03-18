@@ -20,7 +20,25 @@ const subjectmodel = new Schema({
     views: {
         type: Number,
         default: 0
-    }
+    },
+    Solved: {
+        type: Boolean,
+        default: false
+    },
+    rate: {
+        type: Number
+    },
+    Comments: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Comments"
+        }
+    ]
+    ,
+    users: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'User'
+    },
+
 });
 
 
