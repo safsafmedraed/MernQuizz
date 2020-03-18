@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 
 const CommentModel = new Schema({
-    Comment: {
+    comment: {
         type: String,
         required: true
     },
     Date: {
-        type: String,
+        type: Date,
         default: Date.now
     },
     userResponse: {
