@@ -6,9 +6,11 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const usersRouter = require('./routes/users');
+const subjectRouter = require('./routes/Subjects');
 const forgotpassword = require('./configuration/forgotpassword');
 const resetpassword = require('./configuration/resetpassword');
 const app = express();
+
 //passport config
 require('./passport')(passport);
 
@@ -16,7 +18,7 @@ require('dotenv').config();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5000",
+    origin: "http://localhost:3000",
     credentials: true
   })
 );
@@ -29,7 +31,7 @@ connection.once('open', () => {
   console.log('***database works!!***');
 })
 
-app.use(cors());
+
 //body-parser
 app.use(express.json());
 //express session
@@ -52,9 +54,8 @@ app.use((req, res, next) => {
 })
 
 
-
-
-app.use('/users', cors(), usersRouter);
+app.use('/subjects', subjectRouter);
+app.use('/users', usersRouter);
 app.use('/forgot', forgotpassword);
 app.use('/reset', resetpassword);
 

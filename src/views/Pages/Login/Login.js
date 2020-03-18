@@ -35,6 +35,8 @@ class Login extends Component {
     axios.post('http://localhost:5000/users/login', user)
       .then(res => console.log(res.data));
     console.log(user);
+
+
   }
   render() {
     return (
@@ -66,7 +68,7 @@ class Login extends Component {
                       </InputGroup>
                       <Row>
                         <Col xs="6">
-                          <Button color="primary" className="px-4">Login</Button>
+                          <Button color="primary" className="px-4" >Login</Button>
                         </Col>
                         <Col xs="6" className="text-right">
                           <Button color="link" className="px-0">Forgot password?</Button>
@@ -79,8 +81,7 @@ class Login extends Component {
                   <CardBody className="text-center">
                     <div>
                       <h2>Sign up</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
+                      <p className="text-white">Qwizard !</p>
                       <Link to="/register">
                         <Button color="primary" className="mt-3" active tabIndex={-1}>Register Now!</Button>
                       </Link>

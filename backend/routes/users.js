@@ -6,14 +6,6 @@ const JWT = require('jsonwebtoken');
 const JWT_SECRET = require('../config').JWT_SECRET;
 
 
-const signToken = user => {
-    return JWT.sign({
-        iss: 'CodeWorkr',
-        user: user.id,
-        iat: new Date().getTime(), // current time
-        exp: new Date().setDate(new Date().getDate() + 1) // current time + 1 day ahead
-    }, JWT_SECRET);
-}
 
 
 /**************GET USERS*************/
@@ -31,8 +23,7 @@ router.route('/register').post((req, res) => {
     const password = req.body.password;
     const Firstname = req.body.Firstname;
     const Lastname = req.body.Lastname;
-    //const borndate=req.body.borndate;
-
+    const borndate = req.body.borndate;
     User.findOne({ email: email }).then(user => {
         if (user) {
             console.log("user exists!")
@@ -45,12 +36,12 @@ router.route('/register').post((req, res) => {
                 password,
                 Firstname,
                 Lastname,
-                // borndate
+                borndate
             })
             bycrpt.genSalt(10, (err, salt) =>
                 bycrpt.hash(newUser.password, salt, (err, hash) => {
                     newUser.password = hash;
-                    const token = signToken(newUser);
+                    const token = JWT.sign(newUser.toJSON(), JWT_SECRET);
                     res.cookie('access_token', token, { expires: new Date(Date.now() + 900000), httpOnly: true });
                     newUser.save().then(() => res.json('user registred and you can log in your token is : ' + token)).catch(err => res.status(400).json('Error:' + err));
                 }));
@@ -78,7 +69,7 @@ router.route('/login').post(function (req, res, next) {
             }
 
             const token = JWT.sign(user.toJSON(), JWT_SECRET);
-
+            res.cookie('access_token', token, { expires: new Date(Date.now() + 900000), httpOnly: true });
             return res.json({ user, token });
         });
     })
@@ -94,21 +85,6 @@ router.route('/logout').get((req, res) => {
     console.log('Logged out');
 
 })
-/* function verifytoken(req, res, next) {
-    //get auth header value 
-    const bearerHeader = req.headers['authorization'];
-    //check if bearer is indefined 
-    if (typeof bearerHeader !== 'undefined') {
-        const bearer = bearerHeader.split(' ');
-        //get token from array 
-        const bearerToken = bearer[1];
-        //set the token 
-        req.token = bearerToken;
-        next();
-    } else {
-        //forbiden
-        res.status(403).json('Error:' + err);
-    }
-} */
+
 
 module.exports = router;
