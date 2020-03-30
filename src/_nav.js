@@ -243,7 +243,7 @@ export default {
       attributes: { disabled: false },
     },
     {
-      name: 'Quizz',
+      name: 'Quizza',
       url: '/pages',
       icon: 'icon-star',
       children: [
