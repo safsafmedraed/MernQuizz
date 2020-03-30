@@ -242,6 +242,24 @@ export default {
       icon: 'cui-people',
       attributes: { disabled: false },
     },
-
+    {
+      name: 'Quizz',
+      url: '/pages',
+      icon: 'icon-star',
+      children: [
+        {
+          name: 'Add a Question',
+          url: '/Question',
+          icon: 'cui-people',
+          attributes: { disabled: false },
+        },
+        {
+          name: 'ManageQuestions',
+          url: '/ManageQuestions',
+          icon: 'cui-people',
+          attributes: { disabled: false },
+        }
+      ],
+    }
   ],
 };

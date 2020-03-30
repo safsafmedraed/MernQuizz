@@ -6,8 +6,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const usersRouter = require('./routes/users');
-const forgotpassword = require('./configuration/forgotpassword');
-const resetpassword = require('./configuration/resetpassword');
+const QuestionRouter = require('./routes/Questions');
 const app = express();
 //passport config
 require('./passport')(passport);
@@ -54,10 +53,8 @@ app.use((req, res, next) => {
 
 
 
-app.use('/users', cors(), usersRouter);
-app.use('/forgot', forgotpassword);
-app.use('/reset', resetpassword);
-
+app.use('/users', usersRouter);
+app.use('/questions', QuestionRouter);
 app.listen(port, () => {
   console.log(`Server is running at port : ${port}`);
 })

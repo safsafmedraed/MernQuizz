@@ -4,36 +4,37 @@ import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGr
 import axios from 'axios';
 
 class Login extends Component {
-  constructor(props) {
+  constructor(props){
 
     super(props);
-    this.Onchangepwd = this.Onchangepwd.bind(this);
+    this.Onchangepwd= this.Onchangepwd.bind(this);
     this.onChangeUsername = this.onChangeUsername.bind(this);
-    this.Onsubmit = this.Onsubmit.bind(this);
+    this.Onsubmit= this.Onsubmit.bind(this);
 
     this.state = {
-      email: '',
-      password: ''
+     email : '',
+     password : ''
     };
   }
   onChangeUsername(e) {
     this.setState({
-      email: e.target.value
+      email : e.target.value
     });
   }
   Onchangepwd(e) {
-    this.setState({
-      password: e.target.value
+    this.setState({ 
+    password: e.target.value
     })
   }
-  Onsubmit(e) {
+  Onsubmit(e)
+  {
     e.preventDefault();
     const user = {
-      email: this.state.email,
-      password: this.state.password,
+      email : this.state.email,
+      password : this.state.password,
     };
     axios.post('http://localhost:5000/users/login', user)
-      .then(res => console.log(res.data));
+    .then(res => console.log(res.data));
     console.log(user);
   }
   render() {
@@ -54,7 +55,7 @@ class Login extends Component {
                             <i className="icon-user"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="text" placeholder="email" autoComplete="email" value={this.state.email} onChange={this.onChangeUsername} />
+                        <Input type="text" placeholder="email" autoComplete="email" value={this.state.email} onChange={this.onChangeUsername}/>
                       </InputGroup>
                       <InputGroup className="mb-4">
                         <InputGroupAddon addonType="prepend">
@@ -62,7 +63,7 @@ class Login extends Component {
                             <i className="icon-lock"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="password" placeholder="Password" value={this.state.password} onChange={this.Onchangepwd} />
+                        <Input type="password" placeholder="Password" value={this.state.password} onChange={this.Onchangepwd}  />
                       </InputGroup>
                       <Row>
                         <Col xs="6">
