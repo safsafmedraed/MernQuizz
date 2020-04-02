@@ -1,5 +1,7 @@
 import Question from './Question';
+import ManageQuestions from './ManageQuestions';
+import DetailsQuetion from './DetailsQuestion';
 
 export {
-    Question
+    Question,ManageQuestions,DetailsQuetion,
 };

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Card,CardHeader,CardBody,Form,FormGroup,Col,Label,Input,FormText,CardFooter,Button, NavLink, Nav} from 'reactstrap';
 import axios from 'axios';
+import SuccessAlert from './successAlert';
+import ErrorAlert from './ErrorAlert';
+
 class Question extends Component {  
     constructor(props){
         super(props);
@@ -13,7 +16,8 @@ class Question extends Component {
          description : '',
          alternatives : [{text :'', isCorrect :false}],
          rightanswer : '',
-         points :''
+         points :'',
+         alert_msg : ''
         };
       } 
       Onchangedesc(e){
@@ -61,14 +65,18 @@ class Question extends Component {
             points : this.state.points,
             };
             axios.post('http://localhost:5000/Questions/questions', Question)
-            .then(res => console.log(res.data));
-            console.log(Question);
-                 }
+            .then(res => {
+              this.setState({alert_msg : 'success'})
+            }).catch(error => {
+              this.setState({alert_msg:'error'});
+            })
+          }
     render(){
         return(     
         <Card>
               <CardHeader>
-                <strong>Horizontal</strong> Form
+                {this.state.alert_msg==="success"?<SuccessAlert/>:null}
+                {this.state.alert_msg==="error"?<ErrorAlert/>:null}
               </CardHeader>
               <CardBody>
                 <Form onSubmit={this.Onsubmit} className="form-horizontal">
@@ -125,7 +133,7 @@ class Question extends Component {
                   </FormGroup>
                   <CardFooter>
                   <Nav>
-              <NavLink><Button type="submit" size="sm" color="primary"><i className="fa fa-dot-circle-o"></i> Submit</Button></NavLink> <NavLink> aa</NavLink>
+              <NavLink><Button type="submit" size="sm" color="primary"><i className="fa fa-dot-circle-o"></i> Submit</Button></NavLink>
              
                  </Nav>
                

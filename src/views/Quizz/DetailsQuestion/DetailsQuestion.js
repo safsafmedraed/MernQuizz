@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card,CardHeader,CardBody,Table,Badge} from 'reactstrap';
+import {Card,CardHeader,CardBody,Table, ListGroupItem} from 'reactstrap';
 import axios from 'axios';
 class DetailsQuestion extends Component {  
     constructor(props){
@@ -45,7 +45,7 @@ class DetailsQuestion extends Component {
             <tbody>
             {
               this.state.alternatives.map(alt =>
-              <tr key={alt.text}><td><Badge color={getBadge(alt.isCorrect)}>{alt.text}</Badge></td></tr>)
+              <tr key={alt.text}><td><ListGroupItem color={getBadge(alt.isCorrect)}>{alt.text}</ListGroupItem></td></tr>)
             }
             
             </tbody>

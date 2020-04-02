@@ -243,7 +243,7 @@ export default {
       attributes: { disabled: false },
     },
     {
-      name: 'Quizza',
+      name: 'Quizz',
       url: '/pages',
       icon: 'icon-star',
       children: [
@@ -258,6 +258,12 @@ export default {
           url: '/ManageQuestions',
           icon: 'cui-people',
           attributes: { disabled: false },
+        },
+        {
+          name :'Add a Quizz',
+          url : '/AddQuizz',
+          icon : 'cui-people',
+          attributes : { disabled : false}
         }
       ],
     }

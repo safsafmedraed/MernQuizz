@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed1fe0c3-c8cb-44bd-a64b-e3ff19c3a860" name="Default Changelist" comment="" />
+    <list default="true" id="ed1fe0c3-c8cb-44bd-a64b-e3ff19c3a860" name="Default Changelist" comment="forgot password via mail and reset password">
+      <change afterPath="$PROJECT_DIR$/backend/models/Quizz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/Quizzs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Quizz/AddQuizz/AddQuizz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Quizz/AddQuizz/AddQuizz.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Quizz/AddQuizz/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Quizz/Question/ErrorAlert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Quizz/Question/successAlert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Quizz/DetailsQuestion/DetailsQuestion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Quizz/DetailsQuestion/DetailsQuestion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Quizz/ManageQuestions/ManageQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Quizz/ManageQuestions/ManageQuestions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Quizz/Question/Question.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Quizz/Question/Question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Quizz/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Quizz/index.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,13 +27,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Yiq6w0yvWXFyWQZFi0ZTCswRKJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -48,6 +76,8 @@
       <workItem from="1583586298461" duration="145000" />
       <workItem from="1583597805292" duration="132000" />
       <workItem from="1583677390072" duration="242000" />
+      <workItem from="1585608156983" duration="1016000" />
+      <workItem from="1585801475500" duration="69000" />
     </task>
     <task id="LOCAL-00001" summary="first commit backend Ready!">
       <created>1583435846979</created>
@@ -104,6 +134,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit backend Ready!" />
     <MESSAGE value="react template" />
     <MESSAGE value="user login logout register version 0.1" />

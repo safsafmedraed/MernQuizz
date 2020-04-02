@@ -7,6 +7,7 @@ const session = require('express-session');
 const passport = require('passport');
 const usersRouter = require('./routes/users');
 const QuestionRouter = require('./routes/Questions');
+const QuizzRouter = require('./routes/Quizzs');
 const app = express();
 //passport config
 require('./passport')(passport);
@@ -55,6 +56,7 @@ app.use((req, res, next) => {
 
 app.use('/users', usersRouter);
 app.use('/questions', QuestionRouter);
+app.use('/quizz', QuizzRouter);
 app.listen(port, () => {
   console.log(`Server is running at port : ${port}`);
 })
