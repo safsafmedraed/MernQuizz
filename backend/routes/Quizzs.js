@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 let Quizze = require('../models/Quizz');
+const { check, validationResult } = require('express-validator');
 // get all quiz questions
 router.get('/quizz', (req, res) => {
     Quizze.find()
@@ -12,6 +13,18 @@ router.get('/quizz', (req, res) => {
 router.get('/quizz/:id', (req, res) => {
     Quizze.findById(req.params.id)
     .then(quizzs => res.json(quizzs ))
+    .catch(err => res.status(400).json('Error: ' + err));
+})
+
+router.get('/quizzcode/:code', (req, res) => {
+    Quizze.findOne({code:req.params.code})
+    .then(quizzs => {
+        if(quizzs===null)
+    {
+       return res.status(400).json('error')
+    }
+    res.json(quizzs)
+})
     .catch(err => res.status(400).json('Error: ' + err));
 })
 
@@ -30,7 +43,7 @@ router.post('/quizz', (req, res) => {
             Timer
         })
         Quizz.save()
-        .then(() => res.json('Quizz added succefully'+ Quizz))
+        .then(() => res.json(Quizz))
         .catch(err => res.status(400).json('Error:' + err));
 })
 

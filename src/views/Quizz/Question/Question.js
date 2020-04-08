@@ -9,13 +9,13 @@ class Question extends Component {
         super(props);
         this.Onchangedesc = this.Onchangedesc.bind(this);
         this.Onchangepoints= this.Onchangepoints.bind(this);
-        this.Onchangerightanswer = this.Onchangerightanswer.bind(this);
+        this.OnchangeCorrect = this.OnchangeCorrect.bind(this);
         this.handlechange= this.handlechange.bind(this);
         this.Onsubmit = this.Onsubmit.bind(this);
         this.state = {
          description : '',
          alternatives : [{text :'', isCorrect :false}],
-         rightanswer : '',
+         Correct : '',
          points :'',
          alert_msg : ''
         };
@@ -27,7 +27,6 @@ class Question extends Component {
       }
       handlechange(e,index){
         this.state.alternatives[index].text = e.target.value
-        
         //aezaea
         this.setState({alternatives : this.state.alternatives})
       }
@@ -35,10 +34,10 @@ class Question extends Component {
         this.state.alternatives.splice(index,1)
         this.setState({alternatives : this.state.alternatives})
       }
-      Onchangerightanswer(e)
+      OnchangeCorrect(e)
       {
           this.setState({
-              rightanswer : e.target.value
+              Correct : e.target.value
           });
       }
       addAnswer(){
@@ -55,7 +54,7 @@ class Question extends Component {
                 {
             e.preventDefault();
              const alternative = {
-                text : this.state.rightanswer,
+                text : this.state.Correct,
                 isCorrect : true,
             }
            let aa = [...this.state.alternatives,alternative];
@@ -63,6 +62,7 @@ class Question extends Component {
             description : this.state.description,
             alternatives : aa,
             points : this.state.points,
+            Correct : this.state.Correct
             };
             axios.post('http://localhost:5000/Questions/questions', Question)
             .then(res => {
@@ -75,8 +75,8 @@ class Question extends Component {
         return(     
         <Card>
               <CardHeader>
-                {this.state.alert_msg==="success"?<SuccessAlert/>:null}
-                {this.state.alert_msg==="error"?<ErrorAlert/>:null}
+                {this.state.alert_msg==="success"?<SuccessAlert text={"successfully added"}/>:null}
+                {this.state.alert_msg==="error"?<ErrorAlerttext text={"something went wrong"}/>:null}
               </CardHeader>
               <CardBody>
                 <Form onSubmit={this.Onsubmit} className="form-horizontal">
@@ -118,7 +118,7 @@ class Question extends Component {
                       <Label htmlFor="hf-password">Correct Answer : </Label>
                     </Col>
                     <Col xs="12" md="9">
-                      <Input type="text" id="Answer" name="Answer" placeholder="Answer..." autoComplete="Answer" required="true" value={this.state.rightanswer} onChange={this.Onchangerightanswer}/>
+                      <Input type="text" id="Answer" name="Answer" placeholder="Answer..." autoComplete="Answer" required="true" value={this.state.Correct} onChange={this.OnchangeCorrect}/>
                       <FormText className="help-block">Please enter your Answer</FormText>
                     </Col>
                   </FormGroup>

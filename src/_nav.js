@@ -264,6 +264,12 @@ export default {
           url : '/AddQuizz',
           icon : 'cui-people',
           attributes : { disabled : false}
+        },
+        {
+          name : 'QuizzAnswer',
+          url : '/QuizzAnswer',
+          icon : 'cui-people',
+          attributes : {disabled: false}
         }
       ],
     }

@@ -15,7 +15,8 @@ const QuestionSchema = new mongoose.Schema({
             }
         }
     ],
-    points : Number
+    points : Number,
+    Correct : String
 })
 
 module.exports = mongoose.model('Question', QuestionSchema)

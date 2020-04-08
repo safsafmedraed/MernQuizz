@@ -17,7 +17,8 @@ class AddQuizz extends Component {
             Timer : "",
             Options : [],
             value :[],
-            take : []
+            take : [],
+            code : ''
            
         }
     }
@@ -55,7 +56,7 @@ class AddQuizz extends Component {
                 }
               }
         this.setState({value: value});
-              
+              console.log(this.state.value);
     }
       onsubmit(e){
         e.preventDefault();
@@ -63,30 +64,34 @@ class AddQuizz extends Component {
         this.state.value.forEach(element => {
           axios.get(`http://localhost:5000/Questions/questions/${element}`)
             .then(res=> {
+              console.log(res);
               this.setState({take: [...this.state.take,res.data]})
             })
-            console.log(this.state.take);
         });
           
         const Quizz = {classe: this.state.classe,
           Question: this.state.take,
           Timer: this.state.Timer
         }
-        if(this.state.take.length!=0){
+        if(this.state.take.length!==0){
         axios.post('http://localhost:5000/Quizz/Quizz', Quizz)
             .then(res => {
               this.setState({alert_msg : 'success',
-                  value: []})
+                  value: [],
+                  code : res.data.code
+                })
+                  
             }).catch(error => {
               this.setState({alert_msg:'error'});
             })
-            console.log(this.state.alert_msg);
+            
+            
       }}
     render() {
        
         return(
             <Card>
-                <CardHeader>{this.state.alert_msg==="success"?<SuccessAlert/>:null}
+                <CardHeader>{this.state.alert_msg==="success"?<SuccessAlert text={'successfully created, this is the code for this quizz : '+ this.state.code}/>:null}
                 {this.state.alert_msg==="error"?<ErrorAlert/>:null}</CardHeader>
                 
                     <Form className="form-horizontal" onSubmit={this.onsubmit}>
@@ -119,7 +124,7 @@ class AddQuizz extends Component {
                   </FormGroup>
                   <FormGroup row>
                   <Col md="3">
-                      <Label htmlFor="Timer">Class : </Label>
+                      <Label htmlFor="Timer">Timer : </Label>
                     </Col>
                     <Col xs="12" md="9">
                       <Input type="number" min="0" id="Timer" name="Timer" placeholder="Enter Class..." autoComplete="Timer" value={this.state.Timer} onChange={this.onchangetimer}/>

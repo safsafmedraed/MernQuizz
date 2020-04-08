@@ -1,12 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Alert} from 'reactstrap';
-export default class successAlert extends Component
+
+const successAlert = ({text}) => 
 {
-    render(){
+    
         return(
                 <Alert color="success">
-                 Successfull
+                 {text}
                 </Alert>
         )
-    }
+    
 }
+export default successAlert;

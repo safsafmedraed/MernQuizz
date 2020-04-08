@@ -40,6 +40,7 @@ const Question  = React.lazy(()=> import('./views/Quizz/Question'));
 const ManageQuestions = React.lazy(()=> import('./views/Quizz/ManageQuestions'));
 const DetailsQuestion = React.lazy(()=> import('./views/Quizz/DetailsQuestion'));
 const AddQuizz = React.lazy(()=> import('./views/Quizz/AddQuizz'));
+const QuizzAnswer = React.lazy(()=>import('./views/Quizz/QuizzAnswer'));
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -87,7 +88,8 @@ const routes = [
   { path: '/Question', exact: true, name: 'Question', component: Question },
   { path : '/ManageQuestions', exact:true, name: 'ManageQuestions' , component: ManageQuestions},
   { path : '/DetailsQuestion/:id', exact:true, name :'DetailsQuestion', component: DetailsQuestion},
-  { path : '/AddQuizz', exact:true, name :'AddQuizz', component: AddQuizz}
+  { path : '/AddQuizz', exact:true, name :'AddQuizz', component: AddQuizz},
+  { path : '/QuizzAnswer', exact: true, name:'QuizzAnswer', component : QuizzAnswer}
 ];
 
 export default routes;

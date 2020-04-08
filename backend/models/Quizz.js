@@ -31,6 +31,10 @@ const QuizzSchema = new mongoose.Schema({
             points : {
                 type: Number,
                 required: true
+            },
+            Correct : {
+                type: String,
+                require : true
             }
         }
     ],

@@ -73,7 +73,7 @@ class ManageQuestions extends Component {
           
         </CardBody>
         <CardFooter>
-                {this.state.alert_msg==="success"?<SuccessAlert/>:null}
+                {this.state.alert_msg==="success"?<SuccessAlert text={'successful'}/>:null}
                 {this.state.alert_msg==="error"?<ErrorAlert/>:null}
         </CardFooter>
       </Card>)

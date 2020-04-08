@@ -21,10 +21,12 @@ router.post('/questions', (req, res) => {
         const  description  = req.body.description;
         const  alternatives  = req.body.alternatives;
         const  points = Number(req.body.points);
+        const  Correct = req.body.Correct;
         const Questionss = new Question({
             description,
             alternatives,
-            points
+            points,
+            Correct
         })
         Questionss.save()
         .then(() => res.json('question added succefully'+Questionss))
@@ -38,7 +40,7 @@ router.put('/questions/:id', (req, res) => {
         questions.description = req.body.description;
         questions.points = Number(req.body.points);
         questions.alternatives = req.body.alternatives;
-
+        questions.Correct = req.body.Correct;
         questions.save()
         .then(() => res.json('Question updated!'))
         .catch(err => res.status(400).json('Error: ' + err));
