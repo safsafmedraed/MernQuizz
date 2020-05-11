@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed1fe0c3-c8cb-44bd-a64b-e3ff19c3a860" name="Default Changelist" comment="" />
+    <list default="true" id="ed1fe0c3-c8cb-44bd-a64b-e3ff19c3a860" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +108,8 @@
       <workItem from="1588713933051" duration="1007000" />
       <workItem from="1588714970561" duration="75000" />
       <workItem from="1588720226595" duration="138000" />
+      <workItem from="1589146729815" duration="956000" />
+      <workItem from="1589155951293" duration="535000" />
     </task>
     <task id="LOCAL-00001" summary="first commit backend Ready!">
       <created>1583435846979</created>
@@ -197,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588720257644</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="v.final">
+      <created>1589146894093</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1589146894093</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +237,7 @@
     <MESSAGE value="aaaaaa" />
     <MESSAGE value="backend classes ,presence" />
     <MESSAGE value="v.final -1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.final -1" />
+    <MESSAGE value="v.final" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.final" />
   </component>
 </project>
